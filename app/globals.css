@@ -128,7 +128,7 @@
 
 /* Glassmorphism styles */
 .glass-bubble {
-  @apply rounded-full border-2 backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl cursor-pointer w-20 h-20 sm:w-20 sm:h-20;
+  @apply rounded-full border-2 backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl cursor-pointer w-20 h-20 sm:w-20 sm:h-20;
 }
 
 .glass-bubble-large {

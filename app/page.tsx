@@ -56,14 +56,14 @@ export default function Home() {
               <h1 className="text-5xl font-bold text-center mb-16 text-slate-900">
                 I am feeling...
               </h1>
-              <div className="relative flex flex-col items-center gap-6 max-w-sm mx-auto">
+              <div className="relative flex flex-col items-center gap-4 max-w-sm mx-auto">
                 {/* Rows mapping - Using a helper to keep code clean */}
                 {[
                   [emotions[0], emotions[1]],
                   [emotions[2], emotions[3], emotions[4]],
                   [emotions[5], emotions[6]],
                 ].map((row, rowIndex) => (
-                  <div key={rowIndex} className="flex gap-4">
+                  <div key={rowIndex} className="flex gap-2">
                     {row.map((emotion) => (
                       <button
                         key={emotion.key}
@@ -73,7 +73,7 @@ export default function Home() {
                         className="group"
                       >
                         <div
-                          className={`glass-bubble w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center bg-gradient-to-br ${emotion.color} transition-transform duration-300 group-hover:scale-110 group-active:scale-95`}
+                          className={`glass-bubble w-24! h-24! sm:w-28! sm:h-28! flex items-center justify-center bg-gradient-to-br ${emotion.color} transition-transform duration-300 group-hover:scale-110 group-active:scale-95`}
                         >
                           <span className="text-base font-medium">
                             {emotion.name}
