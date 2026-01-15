@@ -78,7 +78,7 @@ export default function Home() {
   border border-white/10 
   ring-1 ring-inset ring-white/20 `}
                         >
-                          <span className="text-xl font-medium">
+                          <span className="text-xl font-medium font-['DM_Sans']">
                             {emotion.name}
                           </span>
                         </div>
