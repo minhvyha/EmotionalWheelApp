@@ -49,7 +49,7 @@ export default function Home() {
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="min-h-screen flex items-center justify-center p-6"
           >
             <div className="w-full max-w-md">
@@ -98,7 +98,7 @@ export default function Home() {
             animate="animate"
             exit="exit"
             transition={{
-              duration: 0.5,
+              duration: 0.3,
               type: "spring",
               damping: 25,
               stiffness: 120,
