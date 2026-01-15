@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-pink-50/30 to-purple-50/40 overflow-hidden">
+    <div className="min-h-screen bg-[linear-gradient(45deg,hsla(0,100%,96%,1)_0%,hsla(0,68%,95%,1)_28%,hsla(0,68%,95%,1)_37%,hsla(240,83%,95%,1)_74%,hsla(240,83%,95%,1)_74%,hsla(28,100%,95%,1)_100%)] overflow-hidden">
       <AnimatePresence mode="wait">
         {!selectedEmotion ? (
           // MAIN SELECTION SCREEN
@@ -73,9 +73,12 @@ export default function Home() {
                         className="group"
                       >
                         <div
-                          className={`glass-bubble w-24! h-24! sm:w-28! sm:h-28! flex items-center justify-center bg-gradient-to-br ${emotion.color} transition-transform duration-300 group-hover:scale-110 group-active:scale-95`}
+                          className={`glass-bubble w-24! h-24! sm:w-28! sm:h-28! flex items-center justify-center  ${emotion.color} transition-transform duration-300 group-hover:scale-110 group-active:scale-95 
+  backdrop-blur-md
+  border border-white/10 
+  ring-1 ring-inset ring-white/20 `}
                         >
-                          <span className="text-base font-medium">
+                          <span className="text-xl font-medium">
                             {emotion.name}
                           </span>
                         </div>
@@ -108,19 +111,19 @@ export default function Home() {
                 className="inline-flex items-center gap-1 text-slate-900 mb-12 text-lg hover:text-slate-700 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" />
-                <span>Back</span>
+                <span className="font-['DM_Sans']">Back</span>
               </button>
 
-              <div className="mb-12">
+              <div className="mb-4">
                 <h1 className="text-5xl font-bold mb-3 text-slate-900">
                   {emotionsData[selectedEmotion].name}
                 </h1>
-                <p className="text-lg text-slate-700 leading-relaxed">
+                <p className="text-3xl text-slate-700 leading-relaxed font-['DM_Sans']">
                   {emotionsData[selectedEmotion].description}
                 </p>
               </div>
 
-              <div className="relative flex items-center justify-center min-h-[450px]">
+              <div className="relative flex items-center justify-center min-h-[380px]">
                 {/* Center circle */}
                 <motion.button
                   layoutId={`bubble-${selectedEmotion}`}
@@ -128,17 +131,18 @@ export default function Home() {
                     setSelectedWord({
                       word: emotionsData[selectedEmotion].name,
                       definition: emotionsData[selectedEmotion].description,
-
                     })
                   }
                   // Added: w-32 h-32 rounded-full flex-shrink-0
-                  className={`glass-bubble-large absolute z-10 w-32 h-32 rounded-full bg-gradient-to-br ${emotionsData[selectedEmotion].color} flex items-center justify-center shadow-lg`}
+                  className={`glass-bubble-large absolute z-10 w-32 h-32 rounded-full bg-gradient-to-br  ${emotionsData[selectedEmotion].largeColor} flex items-center justify-center shadow-lg backdrop-blur-md
+  border border-white/10 
+  ring-1 ring-inset ring-white/20`}
                 >
                   <div className="text-center p-2">
-                    <div className="font-semibold text-lg leading-tight">
+                    <div className="font-medium text-2xl leading-tight font-['DM_Sans']">
                       {emotionsData[selectedEmotion].name}
                     </div>
-                    <div className="text-[10px] uppercase tracking-widest opacity-75 mt-1">
+                    <div className="text-lg uppercase font-['DM_Mono']">
                       CURRENT
                     </div>
                   </div>
@@ -159,14 +163,16 @@ export default function Home() {
                     <motion.button
                       key={item.word}
                       onClick={() => setSelectedWord(item)}
-                      className={`glass-bubble absolute w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-br ${emotionsData[selectedEmotion].color} shadow-md`}
+                      className={`glass-bubble absolute w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-br ${emotionsData[selectedEmotion].color} shadow-md backdrop-blur-md
+  border border-white/10 
+  ring-1 ring-inset ring-white/20`}
                       style={{
                         left: "50%",
                         top: "50%",
                         transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                       }}
                     >
-                      <span className="text-xs font-medium text-center px-2 leading-tight">
+                      <span className="text-xs font-medium text-center px-2 leading-tight font-['DM_Sans'] ">
                         {item.word}
                       </span>
                     </motion.button>
@@ -204,11 +210,11 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-4 text-slate-900">
                 {selectedWord.word}
               </h2>
-              <p className="text-slate-700 leading-relaxed mb-4">
+              <p className="text-slate-700 leading-relaxed mb-4 font-['DM_Sans']">
                 {selectedWord.definition}
               </p>
               {selectedWord.example && (
-                <p className="text-slate-600 italic leading-relaxed">
+                <p className="text-slate-600 italic leading-relaxed font-['DM_Sans']">
                   {selectedWord.example}
                 </p>
               )}
